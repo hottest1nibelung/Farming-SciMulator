@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwj1kaac5ut7u"]
+
+[ext_resource type="Script" uid="uid://5vlipikh21bs" path="res://scripts/ai_chat.gd" id="1_rwcgm"]
+[ext_resource type="Texture2D" uid="uid://dddshwfb6h7n" path="res://scenes/ChatUI/Talking with the NPCS/textBox.png" id="2_k48mc"]
+
+[node name="AI_chat" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rwcgm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TextBox" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(581.50006, 427)
+scale = Vector2(1.1708986, 0.6513672)
+texture = ExtResource("2_k48mc")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.17400001
+anchor_top = 0.143
+anchor_right = 0.17400001
+anchor_bottom = 0.143
+offset_left = 767.552
+offset_top = 436.336
+offset_right = 813.552
+offset_bottom = 467.336
+text = "send"
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer"]
+offset_left = 101.0
+offset_top = 527.0
+offset_right = 921.0
+offset_bottom = 581.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 203.0
+offset_top = 286.0
+offset_right = 830.0
+offset_bottom = 487.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)

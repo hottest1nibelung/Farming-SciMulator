@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgsqtons1v7hg"]
+
+[ext_resource type="FontFile" uid="uid://cds6pvdbwwwc4" path="res://fonts/MorrisRomanBlack.ttf" id="1_00ux5"]
+[ext_resource type="Script" uid="uid://jj3tb2o87j46" path="res://scenes/MainMenu/map_butts.gd" id="1_pouga"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6mm1t"]
+font = ExtResource("1_00ux5")
+font_size = 70
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MapButts" type="Node2D"]
+script = ExtResource("1_pouga")
+
+[node name="desertButt" type="Button" parent="."]
+offset_left = 395.0
+offset_top = 294.0
+offset_right = 615.0
+offset_bottom = 370.0
+theme_override_fonts/font = ExtResource("1_00ux5")
+theme_override_font_sizes/font_size = 40
+text = "Desert"
+
+[node name="meadowButt" type="Button" parent="."]
+offset_left = 395.0
+offset_top = 383.0
+offset_right = 615.0
+offset_bottom = 459.0
+theme_override_fonts/font = ExtResource("1_00ux5")
+theme_override_font_sizes/font_size = 40
+text = "Meadow"
+
+[node name="Mountain" type="Button" parent="."]
+offset_left = 395.0
+offset_top = 472.0
+offset_right = 615.0
+offset_bottom = 548.0
+theme_override_fonts/font = ExtResource("1_00ux5")
+theme_override_font_sizes/font_size = 40
+text = "Mountain"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 232.0
+offset_top = 197.0
+offset_right = 800.0
+offset_bottom = 258.0
+text = "Choose a farm region"
+label_settings = SubResource("LabelSettings_6mm1t")
+
+[connection signal="pressed" from="desertButt" to="." method="_on_desert_butt_pressed"]
+[connection signal="pressed" from="meadowButt" to="." method="_on_meadow_butt_pressed"]
+[connection signal="pressed" from="Mountain" to="." method="_on_mountain_pressed"]

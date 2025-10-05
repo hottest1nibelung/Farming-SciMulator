@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkeu322c1rs6r"]
+
+[ext_resource type="Script" uid="uid://b4pkj6s8i21yo" path="res://scenes/UI/change_farmbutt.gd" id="1_26pgp"]
+[ext_resource type="FontFile" uid="uid://cds6pvdbwwwc4" path="res://fonts/MorrisRomanBlack.ttf" id="1_ke8ql"]
+[ext_resource type="PackedScene" uid="uid://dgsqtons1v7hg" path="res://scenes/MainMenu/map_butts.tscn" id="3_01pyp"]
+
+[node name="changeFarmbutt" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_26pgp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 970.0
+offset_top = 19.0
+offset_right = 1126.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("1_ke8ql")
+theme_override_font_sizes/font_size = 30
+text = "Change farm"
+
+[node name="MapButts" parent="CanvasLayer" instance=ExtResource("3_01pyp")]
+visible = false
+position = Vector2(71, -170)
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
