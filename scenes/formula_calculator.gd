@@ -13,7 +13,7 @@ const pan_intensity = 10 #A
 const pan_dims = Vector2(1.7, 1.0) #width and height
 const bat_tension = 200#battery tension = 200V
 const bat_intensity =12#A
-const h = 50
+const h = 6
 const cp = 1005
 
 func _process(delta: float) -> void:
