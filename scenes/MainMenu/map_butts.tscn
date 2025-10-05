@@ -21,6 +21,27 @@ theme_override_fonts/font = ExtResource("1_00ux5")
 theme_override_font_sizes/font_size = 40
 text = "Desert"
 
+[node name="formulaButt" type="Button" parent="."]
+offset_left = 663.0
+offset_top = 345.0
+offset_right = 1138.0
+offset_bottom = 421.0
+rotation = 0.0019654091
+theme_override_fonts/font = ExtResource("1_00ux5")
+theme_override_font_sizes/font_size = 40
+text = "Desert&Meadow Efficiency calc.
+"
+
+[node name="formulaButt2" type="Button" parent="."]
+offset_left = 662.0
+offset_top = 471.0
+offset_right = 987.0
+offset_bottom = 547.0
+theme_override_fonts/font = ExtResource("1_00ux5")
+theme_override_font_sizes/font_size = 40
+text = "Mountain Efficiency calc.
+"
+
 [node name="meadowButt" type="Button" parent="."]
 offset_left = 395.0
 offset_top = 383.0
@@ -48,5 +69,7 @@ text = "Choose a farm region"
 label_settings = SubResource("LabelSettings_6mm1t")
 
 [connection signal="pressed" from="desertButt" to="." method="_on_desert_butt_pressed"]
+[connection signal="pressed" from="formulaButt" to="." method="_on_formula_butt_pressed"]
+[connection signal="pressed" from="formulaButt2" to="." method="_on_formula_butt_2_pressed"]
 [connection signal="pressed" from="meadowButt" to="." method="_on_meadow_butt_pressed"]
 [connection signal="pressed" from="Mountain" to="." method="_on_mountain_pressed"]

@@ -2650,9 +2650,14 @@ offset_bottom = 17.0
 
 [node name="AI_chat" parent="." instance=ExtResource("36_b57lt")]
 
+[node name="CanvasLayer" parent="AI_chat" index="0"]
+visible = false
+
 [connection signal="pressed" from="Mine" to="." method="_on_mine_pressed"]
 [connection signal="pressed" from="GreenHouse" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="instalationButton" to="." method="_on_instalation_button_pressed"]
 [connection signal="button_down" from="bugButt" to="." method="_on_bug_butt_button_down"]
 [connection signal="pressed" from="cardGameButt" to="." method="_on_card_game_butt_pressed"]
 [connection signal="pressed" from="womanButt" to="." method="_on_woman_butt_pressed"]
+
+[editable path="AI_chat"]

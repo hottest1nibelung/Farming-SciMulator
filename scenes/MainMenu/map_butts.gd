@@ -16,3 +16,11 @@ func _on_mountain_pressed() -> void:
 
 func load_farm():
 	get_tree().change_scene_to_file(Global.current_farm)
+
+
+func _on_formula_butt_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/formula_calculator.tscn")
+
+
+func _on_formula_butt_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/formula_calculator_2.tscn")

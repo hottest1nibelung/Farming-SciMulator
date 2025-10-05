@@ -13,7 +13,6 @@ grow_vertical = 2
 script = ExtResource("1_rwcgm")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="TextBox" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(581.50006, 427)

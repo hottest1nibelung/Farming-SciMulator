@@ -3289,7 +3289,18 @@ texture = ExtResource("10_ma0ma")
 region_enabled = true
 region_rect = Rect2(531, 466, 188, 126)
 
-[node name="changeFarmbutt" parent="." instance=ExtResource("11_ggnb2")]
+[node name="Path2D" type="Path2D" parent="system"]
+curve = SubResource("Curve2D_2dn65")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="system/Path2D"]
+position = Vector2(-583, -344)
+rotation = 1.1390527
+
+[node name="PointLight2D" type="PointLight2D" parent="system/Path2D/PathFollow2D"]
+rotation = -1.1390527
+texture = SubResource("GradientTexture2D_yt1ss")
+
+[node name="changeFarmbutt" parent="system" instance=ExtResource("11_ggnb2")]
 offset_left = -1131.52
 offset_top = -525.52
 offset_right = -1131.52
@@ -3301,17 +3312,6 @@ position = Vector2(-289, 12)
 zoom = Vector2(1.5, 1.5)
 
 [node name="Chat" parent="." instance=ExtResource("12_hpjvt")]
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_2dn65")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-583, -344)
-rotation = 1.1390527
-
-[node name="PointLight2D" type="PointLight2D" parent="Path2D/PathFollow2D"]
-rotation = -1.1390527
-texture = SubResource("GradientTexture2D_yt1ss")
 
 [node name="Rain effect" parent="." instance=ExtResource("14_j7k3n")]
 position = Vector2(-506, -257)

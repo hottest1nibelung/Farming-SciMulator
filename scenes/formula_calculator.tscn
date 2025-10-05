@@ -1,0 +1,359 @@
+[gd_scene load_steps=16 format=3 uid="uid://beh5c0fu5k2go"]
+
+[ext_resource type="Script" uid="uid://y7fwl1tqgoq6" path="res://scenes/formula_calculator.gd" id="1_mh7bx"]
+[ext_resource type="FontFile" uid="uid://cds6pvdbwwwc4" path="res://fonts/MorrisRomanBlack.ttf" id="2_mh7bx"]
+[ext_resource type="FontFile" uid="uid://o0f4gdjt6i01" path="res://fonts/ELEGANT TYPEWRITER Bold.ttf" id="3_8355g"]
+[ext_resource type="Texture2D" uid="uid://ctpnq2iiaejdt" path="res://scenes/Desert/assetsDesert/PhotovoltaicPanel.png" id="4_ggjdy"]
+[ext_resource type="PackedScene" uid="uid://dkeu322c1rs6r" path="res://scenes/UI/change_farmbutt.tscn" id="5_1as71"]
+[ext_resource type="Texture2D" uid="uid://cdf15ilcl5fke" path="res://scenes/Desert/assetsDesert/generator.png" id="6_wu057"]
+[ext_resource type="Texture2D" uid="uid://choxphptvyg3p" path="res://scenes/Desert/assetsDesert/Peltier (2).png" id="7_kwdg7"]
+[ext_resource type="Texture2D" uid="uid://ikq3eklvr771" path="res://scenes/Desert/assetsDesert/rezervor.png" id="8_gkhfk"]
+[ext_resource type="Texture2D" uid="uid://dds1i27wl2tc5" path="res://scenes/Desert/assetsDesert/pipes.png" id="9_0h1cv"]
+[ext_resource type="PackedScene" uid="uid://dwlpjm2s3ikke" path="res://scenes/instalation/rain_effect.tscn" id="10_8wudw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nv2i6"]
+font = ExtResource("2_mh7bx")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Curve2D" id="Curve2D_m87ns"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 387, 68, 0, 0, 0, 0, 441, 260, 0, 0, 0, 0, 454, 289, 0, 0, 0, 0, 488, 294, 0, 0, 0, 0, 558, 289, 0, 0, 0, 0, 569, 290, 0, 0, 0, 0, 569, 337, 0, 0, 0, 0, 464, 336, 0, 0, 0, 0, 463, 367, 0, 0, 0, 0, 501, 371, 0, 0, 0, 0, 503, 352, 0, 0, 0, 0, 569, 352, 0, 0, 0, 0, 569, 373, 0, 0, 0, 0, 610, 372, 0, 0, 0, 0, 611, 378, 0, 0, 0, 0, 654, 381, 0, 0, 0, 0, 656, 388, 0, 0, 0, 0, 661, 460)
+}
+point_count = 18
+
+[sub_resource type="Gradient" id="Gradient_nbvfd"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kqqsj"]
+gradient = SubResource("Gradient_nbvfd")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.9273504, 0.12820514)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8355g"]
+font = ExtResource("3_8355g")
+font_size = 40
+
+[node name="FormulaCalculator" type="Node2D"]
+script = ExtResource("1_mh7bx")
+metadata/_edit_horizontal_guides_ = [-148.0]
+
+[node name="variable" type="Node2D" parent="."]
+position = Vector2(0, -31)
+
+[node name="variable4" type="Node2D" parent="."]
+position = Vector2(-5, 55)
+
+[node name="timeSpinBox" type="SpinBox" parent="variable4"]
+offset_left = 35.0
+offset_top = 22.0
+offset_right = 178.4375
+offset_bottom = 53.0
+min_value = -10000.0
+max_value = 10000.0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="variable4"]
+offset_left = 58.4375
+offset_top = -14.0
+offset_right = 112.4375
+offset_bottom = 12.0
+text = "time:"
+label_settings = SubResource("LabelSettings_nv2i6")
+metadata/_edit_group_ = true
+
+[node name="variable2" type="Node2D" parent="."]
+position = Vector2(154, -31)
+
+[node name="maxTempSpinBox" type="SpinBox" parent="variable2"]
+offset_left = 206.0
+offset_top = 102.0
+offset_right = 349.4375
+offset_bottom = 133.0
+min_value = -10000.0
+max_value = 10000.0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="variable2"]
+offset_left = 210.4375
+offset_top = 70.0
+offset_right = 329.4375
+offset_bottom = 96.0
+text = "Max temp:"
+label_settings = SubResource("LabelSettings_nv2i6")
+metadata/_edit_group_ = true
+
+[node name="l1SpinBox" type="SpinBox" parent="variable2"]
+offset_left = -113.0
+offset_top = 203.0
+offset_right = 30.4375
+offset_bottom = 234.0
+min_value = -10000.0
+max_value = 10000.0
+metadata/_edit_group_ = true
+
+[node name="Label2" type="Label" parent="variable2"]
+offset_left = -126.0
+offset_top = 167.0
+offset_right = 253.0
+offset_bottom = 193.0
+text = "Thermoelectric module width"
+label_settings = SubResource("LabelSettings_nv2i6")
+metadata/_edit_group_ = true
+
+[node name="variable3" type="Node2D" parent="."]
+position = Vector2(309, -31)
+
+[node name="minTempSpinBox" type="SpinBox" parent="variable3"]
+offset_left = -105.0
+offset_top = 104.0
+offset_right = 38.4375
+offset_bottom = 135.0
+min_value = -10000.0
+max_value = 10000.0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="variable3"]
+offset_left = -92.5625
+offset_top = 72.0
+offset_right = 21.4375
+offset_bottom = 98.0
+text = "Min temp:"
+label_settings = SubResource("LabelSettings_nv2i6")
+metadata/_edit_group_ = true
+
+[node name="l2SpinBox" type="SpinBox" parent="variable3"]
+offset_left = -266.0
+offset_top = 294.0
+offset_right = -122.5625
+offset_bottom = 325.0
+min_value = -10000.0
+max_value = 10000.0
+metadata/_edit_group_ = true
+
+[node name="Label2" type="Label" parent="variable3"]
+offset_left = -264.5625
+offset_top = 263.0
+offset_right = 56.4375
+offset_bottom = 289.0
+text = "Thermoelectric module height"
+label_settings = SubResource("LabelSettings_nv2i6")
+metadata/_edit_group_ = true
+
+[node name="calculateButt" type="Button" parent="."]
+offset_left = 83.0
+offset_top = 435.0
+offset_right = 259.0
+offset_bottom = 481.0
+theme_override_fonts/font = ExtResource("3_8355g")
+theme_override_font_sizes/font_size = 30
+text = "Calculate"
+metadata/_edit_use_anchors_ = true
+
+[node name="system" type="Node2D" parent="."]
+position = Vector2(-293, -365)
+scale = Vector2(2, 2)
+
+[node name="Line2D" type="Line2D" parent="system"]
+position = Vector2(-182, -76)
+points = PackedVector2Array(634, 381, 665, 381, 694, 381, 723, 381, 752, 381, 781, 381, 810, 381, 839, 381, 868, 381)
+width = 2.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="PhotovoltaicPanel4" type="Sprite2D" parent="system"]
+z_index = 3
+position = Vector2(600.48, 289.48)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("4_ggjdy")
+
+[node name="PhotovoltaicPanel6" type="Sprite2D" parent="system"]
+z_index = 3
+position = Vector2(542.48, 289.48)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("4_ggjdy")
+
+[node name="PhotovoltaicPanel7" type="Sprite2D" parent="system"]
+z_index = 3
+position = Vector2(513.48, 289.48)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("4_ggjdy")
+
+[node name="PhotovoltaicPanel8" type="Sprite2D" parent="system"]
+z_index = 3
+position = Vector2(484.47998, 289.48)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("4_ggjdy")
+
+[node name="PhotovoltaicPanel9" type="Sprite2D" parent="system"]
+z_index = 3
+position = Vector2(455.47998, 289.48)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("4_ggjdy")
+
+[node name="PhotovoltaicPanel10" type="Sprite2D" parent="system"]
+z_index = 3
+position = Vector2(687.48, 289.48)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("4_ggjdy")
+
+[node name="PhotovoltaicPanel11" type="Sprite2D" parent="system"]
+z_index = 3
+position = Vector2(658.48, 289.48)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("4_ggjdy")
+
+[node name="PhotovoltaicPanel12" type="Sprite2D" parent="system"]
+z_index = 3
+position = Vector2(629.48, 289.48)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("4_ggjdy")
+
+[node name="cablu2" type="Line2D" parent="system"]
+position = Vector2(-180.52002, -78.51999)
+points = PackedVector2Array(750, 384, 750, 417, 644, 417, 644, 447, 654, 447)
+width = 2.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="changeFarmbutt" parent="system/cablu2" instance=ExtResource("5_1as71")]
+
+[node name="PhotovoltaicPanel5" type="Sprite2D" parent="system"]
+z_index = 3
+position = Vector2(571.48, 289.48)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("4_ggjdy")
+
+[node name="cablu3" type="Line2D" parent="system"]
+position = Vector2(603.48, 365.48)
+points = PackedVector2Array(-101, -7, -101, -13, -34, -13, -34, 7, -12, 7)
+width = 2.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Generator" type="Sprite2D" parent="system"]
+position = Vector2(489.47998, 370.48)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("6_wu057")
+
+[node name="Peltier(2)" type="Sprite2D" parent="system"]
+position = Vector2(603.48, 365.48)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("7_kwdg7")
+region_enabled = true
+region_rect = Rect2(0, 0, 1024, 769)
+
+[node name="Rezervor" type="Sprite2D" parent="system"]
+position = Vector2(657.99994, 442.99997)
+scale = Vector2(0.08400637, 0.08472002)
+texture = ExtResource("8_gkhfk")
+region_enabled = true
+region_rect = Rect2(467, 190, 619, 661)
+
+[node name="Pipes" type="Sprite2D" parent="system"]
+position = Vector2(614.48, 378.48)
+scale = Vector2(0.035444017, 0.027999999)
+texture = ExtResource("9_0h1cv")
+region_enabled = true
+region_rect = Rect2(93, 85, 259, 125)
+
+[node name="Pipes2" type="Sprite2D" parent="system"]
+position = Vector2(628.48, 378.48)
+scale = Vector2(0.035444017, 0.027999999)
+texture = ExtResource("9_0h1cv")
+region_enabled = true
+region_rect = Rect2(93, 85, 259, 125)
+
+[node name="Pipes3" type="Sprite2D" parent="system"]
+position = Vector2(621.48004, 378.48)
+scale = Vector2(0.035444017, 0.027999999)
+texture = ExtResource("9_0h1cv")
+region_enabled = true
+region_rect = Rect2(93, 85, 259, 125)
+
+[node name="Pipes4" type="Sprite2D" parent="system"]
+position = Vector2(649.48, 378.48)
+scale = Vector2(0.035444017, 0.027999999)
+texture = ExtResource("9_0h1cv")
+region_enabled = true
+region_rect = Rect2(93, 85, 259, 125)
+
+[node name="Pipes5" type="Sprite2D" parent="system"]
+position = Vector2(642.48, 378.48)
+scale = Vector2(0.035444017, 0.027999999)
+texture = ExtResource("9_0h1cv")
+region_enabled = true
+region_rect = Rect2(93, 85, 259, 125)
+
+[node name="Pipes6" type="Sprite2D" parent="system"]
+position = Vector2(635.48, 378.48)
+scale = Vector2(0.035444017, 0.027999999)
+texture = ExtResource("9_0h1cv")
+region_enabled = true
+region_rect = Rect2(93, 85, 259, 125)
+
+[node name="curbaPipe" type="Sprite2D" parent="system"]
+position = Vector2(655.4653, 380.79617)
+rotation = 3.1415925
+scale = Vector2(0.043425623, 0.053658035)
+texture = ExtResource("9_0h1cv")
+region_enabled = true
+region_rect = Rect2(107, 649, 165, 150)
+
+[node name="Pipes8" type="Sprite2D" parent="system"]
+position = Vector2(658.0766, 387.47998)
+rotation = 1.5707964
+scale = Vector2(0.04, 0.040346917)
+texture = ExtResource("9_0h1cv")
+region_enabled = true
+region_rect = Rect2(531, 466, 188, 126)
+
+[node name="Path2D" type="Path2D" parent="system"]
+curve = SubResource("Curve2D_m87ns")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="system/Path2D"]
+position = Vector2(661, 460)
+rotation = 1.5014632
+progress = 885.56506
+
+[node name="PointLight2D" type="PointLight2D" parent="system/Path2D/PathFollow2D"]
+rotation = -1.2062703
+texture = SubResource("GradientTexture2D_kqqsj")
+
+[node name="Rain effect" parent="system" instance=ExtResource("10_8wudw")]
+position = Vector2(654, 397)
+scale = Vector2(0.01, 0.01)
+
+[node name="GPUParticles2D" parent="system/Rain effect" index="0"]
+amount = 1
+lifetime = 0.44
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.37369603, 0.65041804, 0.37369603, 1)
+metadata/_edit_lock_ = true
+
+[node name="resultLabel" type="Label" parent="."]
+offset_left = 25.0
+offset_top = 548.0
+offset_right = 898.0
+offset_bottom = 608.0
+text = "Volume of water resulted ="
+label_settings = SubResource("LabelSettings_8355g")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 726.0
+offset_top = 614.0
+offset_right = 1085.0
+offset_bottom = 637.0
+text = "Disclaimer: May give error, due to lack of time "
+
+[connection signal="pressed" from="calculateButt" to="." method="_on_calculate_butt_pressed"]
+
+[editable path="system/Rain effect"]

@@ -6,6 +6,31 @@ var base_url := "http://localhost:11434/api/generate"
 var model := "mistral"
 var http_request: HTTPRequest
 
+# <<<--- Just put your NASA resources here
+var resources := """
+You are an AI with access to NASA resources.
+Here are some useful references:
+
+Astronauts in space sometimes get itchy noses — but they can’t just lift their hand to scratch. They use a little foam “Valsalva” device inside their helmet to itch their nose. 
+Astronomy
++1
+
+On July 21, 1969, the first meal eaten on the Moon included bacon, peaches, sugar cookie squares, a pineapple-grapefruit drink, and coffee. 
+Astronomy
+
+Giant storms on Neptune are large enough to swallow Earth. 
+NASA
+
+In microgravity (space), boiling is weird: vapor bubbles don’t float away because there’s no buoyancy — they stay attached to the heat source and grow, which can disrupt cooling systems. 
+NASA
+
+NASA’s astronaut Scott Kelly spent 340 days in space, during which he interacted with only 12 people (while aboard the International Space Station). 
+NASA
+
+NASA has sent over 2,200 animals into space — from insects to pigs to spiders — to study biological effects of microgravity. 
+thefactsite.com
+"""
+
 func _ready() -> void:
 	http_request = HTTPRequest.new()
 	add_child(http_request)
@@ -13,9 +38,13 @@ func _ready() -> void:
 # Send user input to Ollama
 func send_to_ai(prompt: String) -> void:
 	var headers = ["Content-Type: application/json"]
+
+	# Combine resources with user prompt
+	var full_prompt = resources + "\n\nUser: " + prompt
+
 	var body = {
 		"model": model,
-		"prompt": prompt,
+		"prompt": full_prompt,
 		"stream": false
 	}
 
