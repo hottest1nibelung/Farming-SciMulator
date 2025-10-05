@@ -5,7 +5,7 @@ extends Node2D
 var enemy_pos
 
 func _ready() -> void:
-	timer.wait_time = randf_range(3, 5)
+	timer.wait_time = randf_range(4, 7)
 	timer.one_shot = false
 	enemy_pos = global_position
 	if global_position.x > 1152 or global_position.x < 0:

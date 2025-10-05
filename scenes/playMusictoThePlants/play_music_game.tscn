@@ -590,9 +590,6 @@ visible = false
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="time_before_stoppingMusic" type="Timer" parent="."]
-
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="time_before_stoppingMusic" to="." method="_on_time_before_stopping_music_timeout"]
 
 [editable path="UI"]

@@ -44,7 +44,6 @@ func _process(delta: float) -> void:
 	
 func key_pressed(key):
 	if key == current_letter:
-		$time_before_stoppingMusic.start($time_before_stoppingMusic.wait_time)
 		if not music_playing:
 			music_playing = true
 			music.play(saved_pos)
@@ -68,9 +67,6 @@ func win_game():
 func _on_timer_timeout() -> void:
 	win_game()
 
-
-func _on_time_before_stopping_music_timeout() -> void:
-	lose_points()
 
 func lose_points():
 	progress -= PLUS_POINT
